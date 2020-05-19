@@ -82,7 +82,8 @@ def fas_persons(base_url, username, password, freeipa_backend):
     if freeipa_backend:
         client = Client(url=base_url)
         response = client.users.list_users().response().result
-        return response['result']
+        people = response.get('result', [])
+        return people
 
     import fedora.client
     import fedora.client.fas2
