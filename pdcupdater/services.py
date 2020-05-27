@@ -75,11 +75,11 @@ def old_composes(base_url):
 
 
 @pdcupdater.utils.with_ridiculous_timeout
-def fas_persons(base_url, username, password, freeipa_backend):
+def fas_persons(base_url, username, password, fasjson):
     """ Return the list of users in the Fedora Account System. """
 
     log.info("Connecting to Account System at %r" % base_url)
-    if freeipa_backend:
+    if fasjson:
         client = Client(url=base_url)
         response = client.list_users().result
         people = response.get('result', [])
