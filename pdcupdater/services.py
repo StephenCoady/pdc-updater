@@ -81,7 +81,7 @@ def fas_persons(base_url, username, password, freeipa_backend):
     log.info("Connecting to Account System at %r" % base_url)
     if freeipa_backend:
         client = Client(url=base_url)
-        response = client.users.list_users().response().result
+        response = client.list_users().result
         people = response.get('result', [])
         return people
 
