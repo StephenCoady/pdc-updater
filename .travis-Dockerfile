@@ -12,7 +12,6 @@ RUN yum -y update && \
         gcc-c++ \
         krb5-devel \
         libffi-devel \
-        libyaml-devel \
         openssl-devel \
         python3-devel \
         python3-pip \

@@ -81,8 +81,7 @@ def fas_persons(base_url, username, password, fasjson):
     log.info("Connecting to Account System at %r" % base_url)
     if fasjson:
         client = Client(url=base_url)
-        response = client.list_users().result
-        people = response.get('result', [])
+        people = client.list_users().result
         return people
 
     import fedora.client
